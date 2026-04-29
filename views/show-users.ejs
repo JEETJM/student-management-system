@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Cell</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<h1>Students Informa ... </h1>
+<a href="/user/new" class="btn">➕ Add User</a>
+
+<table>
+<tr>
+  <th>ID</th>
+  <th>Username</th>
+  <th>Email</th>
+  <th>Action</th>
+</tr>
+
+<% userss.forEach(user => { %>
+<tr>
+  <td><%= user.id %></td>
+  <td><%= user.username %></td>
+  <td><%= user.email %></td>
+  <td>
+
+    <form action="/user/<%= user.id %>/edit" method="GET">
+      <button class="btn edit">Edit</button>
+    </form>
+
+    <form action="/user/<%= user.id %>?_method=DELETE" method="POST">
+      <input name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <button class="btn delete">Delete</button>
+    </form>
+
+  </td>
+</tr>
+<% }) %>
+
+</table>
+</body>
+</html>
