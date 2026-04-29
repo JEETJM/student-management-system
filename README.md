@@ -47,3 +47,9 @@ This project allows you to **Create, Read, Update, and Delete users** with prope
 ---
 
 ## 📂 Project Structure
+MY-FIRST-DB/
+│── views/
+│── public/
+│── index.js
+│── package.json
+│── .env
